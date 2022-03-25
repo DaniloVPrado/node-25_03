@@ -1,8 +1,31 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
+import './styles.css' //   <--- importando arquivo css 
 const App = () => {
-    return <div>Meu primeiro componente ReactJS</div>
+    const estilosBotao = {
+        marginTop: 12,
+        paddingTop: 8,
+        paddingBottom: 8,
+        backgroundColor: 'blueviolet',
+        color: 'white',
+        border: 'none',
+        width: '100%',
+        borderRadius: 8
+    }
+    const textoDoRotulo = 'Nome'
+    const obterTextoDoBotao = () => "Enviar"
+    // Exemplo com return:
+    //const obterTextoDoBotaoComReturn = () => {
+    //    return "Enviar"
+    //}
+    return(
+        //  'nada' Jsx  -> {} JS -> {{}} objeto JSON 
+        <div style={{margin: 'auto', width: 768, backgroundColor: '#EEE', padding: 12, borderRadius: 8}}>
+            <label className="rotulo" htmlFor="nome" style= {{display: 'block', marginBottom: 4}}>{textoDoRotulo}</label>
+            <input id="nome" type="text" style={{paddingTop: 8, paddingBottom: 8, borderStyle: 'hidden', width: '100%', borderRadius: 8, outline: 'none'}}></input>
+            <button style={estilosBotao}>{obterTextoDoBotao()}</button>
+        </div>
+    )
 }
 
 ReactDOM.render(
